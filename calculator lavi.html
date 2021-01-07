@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://www.preachit.org/images/ppt_thumbs/1029-slide3-600.jpg?m=1416578528");
+            background-size: cover;
+            margin-left: 400px;
+            margin-top: 50px;
+        }
+        #a{
+           height: 100px;
+           width: 170px;
+           font-size: 45px;
+           background-color: rgba(11, 9, 136, 0.6);
+           color: cornsilk;
+           border: none;
+           transition: 0.5s linear;
+        }
+        #b{
+            height: 100px;
+            width: 170px;
+            font-size: 45px;
+            background-color: rgba(100, 21, 21, 0.6);
+            color: cornsilk;
+            border: none;
+            transition: 0.5s ease-out;
+        }
+        #c{
+            height: 100px;
+            width: 170px;
+            font-size: 55px;
+            background-color: rgba(217, 255, 0, 0.6);
+            color: darkblue;
+            border: none;
+            transition: 0.5s ease-out;
+        }
+        #a:hover{
+            background-color: rgba(3, 3, 95, 0.85);
+            color: wheat;
+            border: 2px solid yellow;
+            box-shadow: 5px 5px 5px black;
+            cursor: pointer;
+        }
+         #b:hover{
+             background-color:rgba(100, 21, 21, 0.85);
+             color: darkgray;
+             border: 2px solid yellow;
+             box-shadow: 5px 5px 5px black;
+             cursor: pointer;
+         }
+         #c:hover{
+             background-color:rgba(217, 255, 0, 0.85);
+             color: darkblue;
+             border: 2px solid red;
+             box-shadow: 5px 5px 5px black;
+             cursor: pointer;
+         }
+        #d{
+            height: 120px;
+            width: 690px;
+            font-size: 55px;
+            background-color: rgba(199, 196, 184, 0.6);
+            border: none;
+            cursor: not-allowed;
+            text-align: right;
+            transition: 0.5s ease-out;
+        }
+        #d:hover{
+            background-color: darkgreen;
+            color: yellow;
+            border: 2px solid black;
+            box-shadow: 5px 5px 5px black;
+        }
+    </style>
+</head>
+<body>
+        <input type="text" id="d" placeholder="0">
+    <table>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(7)">7</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(8)">8</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(9)">9</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(4)">4</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(5)">5</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(6)">6</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('X')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="a" onclick="takeInput(1)">1</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(2)">2</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(3)">3</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="c" onclick="clearScreen()">C</button>
+            </td>
+            <td>
+                <button id="a" onclick="takeInput(0)">0</button>
+            </td>
+            <td>
+                <button id="c" onclick="calculateValue()">=</button>
+            </td>
+            <td>
+                <button id="b" onclick="takeInput('/')">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        // var num;
+        function takeInput(num){
+            document.getElementById("d").value = document.getElementById("d").value+num;
+        }
+        function clearScreen(){
+            document.getElementById("d").value = "";
+        }
+        function calculateValue(){
+            var expression = document.getElementById("d").value;
+            document.getElementById("d").value = eval(expression);
+        }
+    </script>
+</body>
+</html>
